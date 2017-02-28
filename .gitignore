@@ -2,9 +2,12 @@
 *.apk
 *.exe
 *.zip
+*.bak
 Library
 obj
 Temp
+Assets/Unity-Logs-Viewer
+Assets/Reporter
 .gitignore
 # Windows image file caches
 Thumbs.db

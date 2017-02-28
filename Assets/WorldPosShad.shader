@@ -1,4 +1,6 @@
-﻿Shader "Unlit/WorldPosShad"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Unlit/WorldPosShad"
 {
 	Properties
 	{
@@ -34,7 +36,7 @@
 			{
 				v2f o;
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
-				o.localPos = mul(_WorldToLocalWP, mul(_Object2World, v.vertex));
+				o.localPos = mul(_WorldToLocalWP, mul(unity_ObjectToWorld, v.vertex));
 				return o;
 			}
 			
