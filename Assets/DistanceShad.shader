@@ -1,4 +1,6 @@
-﻿Shader "Unlit/DistanceShad"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unlit/DistanceShad"
 {
 	Properties
 	{
@@ -36,7 +38,7 @@
 			v2f vert (appdata v)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				//o.dist = distance(_WorldSpaceCameraPos.xyz, mul(_Object2World, v.vertex).xyz);
 				//o.dist = distance(_PersCamPos.xyz, mul(_Object2World, v.vertex).xyz);
 				o.depth = o.vertex.zw;
